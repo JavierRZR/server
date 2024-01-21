@@ -4,7 +4,7 @@ const server = require('http').Server(app);
 const cors = require('cors');
 const { v4: uuidV4 } = require('uuid');
 
-const appUrl = process.env.APP_URL || 'http://localhost:3000';
+const appUrl = process.env.APP_URL || 'https://learnguage.vercel.app/';
 
 
 
