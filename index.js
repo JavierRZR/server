@@ -14,6 +14,7 @@ const io = require('socket.io')(server, {
         methods: ['GET', 'POST']
     }
 })
+io.origins('https://learnguage.vercel.app:*');
 
 app.use(cors());
 
