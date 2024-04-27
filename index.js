@@ -38,7 +38,6 @@ io.on('connection', (socket) => {
     })
 
     socket.on('emit-message', (msg, roomId, userId) => {
-        // socket.join(roomId);
         let content = { msg: msg, userId: userId }
         io.to(roomId).emit('broadcast-newMessage', content);
     })
@@ -48,5 +47,5 @@ io.on('connection', (socket) => {
 const PORT = process.env.PORT || 4000;
 console.log(PORT);
 server.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+    console.log(`Server is running on ${process.env.APP_URL ? process.env.APP_URL : ""}: ${PORT}`);
 });
